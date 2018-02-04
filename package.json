@@ -1,0 +1,39 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "React boilerplate with Webpack 4 beta, TypeScript & Apollo",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethan-james/react-boilerplate.git"
+  },
+  "keywords": [
+    "React",
+    "Webpack@next",
+    "Apollo"
+  ],
+  "author": "Ethan James",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ethan-james/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ethan-james/react-boilerplate#readme",
+  "dependencies": {
+    "@types/react": "^16.0.35",
+    "@types/react-dom": "^16.0.3",
+    "express": "^4.16.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^3.4.0",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0",
+    "webpack-cli": "^2.0.4"
+  }
+}
