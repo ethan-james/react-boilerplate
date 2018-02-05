@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node ./dev-server/index.js",
+    "test": "jest ./dev-server",
+    "clean": "rimraf dist node_modules"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,36 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/jest": "^22.1.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.1.4",
+    "raf": "^3.4.0",
+    "react-test-renderer": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^22.0.3",
     "ts-loader": "^3.4.0",
+    "tslint": "^5.9.1",
+    "tslint-react": "^3.4.0",
     "typescript": "^2.7.1",
     "webpack": "^3.10.0",
     "webpack-cli": "^2.0.4"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./enzyme.setup.js",
+    "setupFiles": [
+      "raf/polyfill"
+    ],
+    "transform": {
+      ".(ts|tsx|mjs)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "mjs"
+    ]
   }
 }
